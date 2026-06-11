@@ -1,29 +1,37 @@
 # 🚀 Company RAG Assistant
 
-A Retrieval-Augmented Generation (RAG) application that answers company policy and HR-related questions using semantic search, vector embeddings, and Large Language Models.
+A Retrieval-Augmented Generation (RAG) application that enables employees to ask company policy and HR-related questions in natural language and receive accurate, context-aware responses.
 
-Users can upload company policy documents and ask questions in natural language to receive context-aware answers.
+The system processes PDF documents, converts them into vector embeddings, stores them in Pinecone Vector Database, retrieves relevant information using semantic search, and generates responses with a Large Language Model (LLM).
 
-## 🎥 Demo
+## 🎥 Application Demo
 
 ![Demo](./company-rag-assitant.gif)
 
-## 🔄 RAG Workflow
+## 🏗️ RAG Pipeline Architecture
 
 ![RAG Workflow](./rag_chatbot_flow.svg)
 
 ---
 
-# ✨ Features
+## 📖 Overview
+
+Company RAG Assistant is an AI-powered knowledge assistant designed to answer company policy questions using Retrieval-Augmented Generation (RAG).
+
+Instead of relying solely on an LLM's training data, the application retrieves relevant information from company documents and uses that context to generate accurate and reliable responses.
+
+---
+
+## ✨ Features
 
 ### 📄 Document Processing
 
-* Upload company policy PDF documents
+* Upload and process PDF documents
 * PDF parsing using LangChain PDF Loader
-* Automatic text chunking
-* Chunk overlap for context preservation
+* Intelligent text chunking
+* Context-preserving chunk overlap
 
-### 🧠 Retrieval-Augmented Generation (RAG)
+### 🧠 Retrieval-Augmented Generation
 
 * Semantic document retrieval
 * Similarity search using vector embeddings
@@ -35,7 +43,7 @@ Users can upload company policy documents and ask questions in natural language 
 * Ollama Embeddings (`all-minilm`)
 * Pinecone Vector Database
 * Cosine similarity search
-* Fast retrieval of relevant information
+* Fast document retrieval
 
 ### 🤖 AI Assistant
 
@@ -44,28 +52,26 @@ Users can upload company policy documents and ask questions in natural language 
 * Company policy assistance
 * HR knowledge base chatbot
 
-### 💬 Chat Interface
+### 💬 User Interface
 
-* Clean React-based UI
+* React-based chat interface
 * Real-time conversation experience
 * Suggested policy questions
 * Markdown response rendering
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```bash
 company-rag-assistant
 │
 ├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
 │
 ├── chat.js
 ├── rag.js
 ├── prepare.js
+├── server.js
 ├── package.json
 ├── README.md
 └── .env
@@ -73,7 +79,7 @@ company-rag-assistant
 
 ---
 
-# ⚙️ Tech Stack
+## ⚙️ Tech Stack
 
 ### Frontend
 
@@ -100,33 +106,41 @@ company-rag-assistant
 
 ---
 
-# 🔄 RAG Workflow
+## 🔄 System Architecture
 
 ```text
 PDF Document
-      ↓
+      │
+      ▼
 PDF Loader
-      ↓
+      │
+      ▼
 Text Chunking
-      ↓
+      │
+      ▼
 Ollama Embeddings
-      ↓
+      │
+      ▼
 Pinecone Vector Database
-      ↓
+      │
+      ▼
 Similarity Search
-      ↓
-Relevant Chunks Retrieved
-      ↓
+      │
+      ▼
+Relevant Chunks
+      │
+      ▼
 Groq LLM
-      ↓
-Final Answer
+      │
+      ▼
+Final Response
 ```
 
 ---
 
-# 📌 Example Questions
+## 📌 Example Questions
 
-* How many sick leaves are provided?
+* How many sick leaves do employees receive?
 * What is the notice period?
 * How does the promotion policy work?
 * What is the annual learning budget?
@@ -135,7 +149,7 @@ Final Answer
 
 ---
 
-# 🔑 Environment Variables
+## 🔑 Environment Variables
 
 ```env
 PINECONE_API_KEY=
@@ -145,7 +159,7 @@ GROQ_API_KEY=
 
 ---
 
-# 🚀 Installation
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/iamshivansh2002/company-rag-assistant.git
@@ -157,35 +171,59 @@ bun install
 
 ---
 
-# 📥 Index Documents
+## 📥 Index Documents
 
 ```bash
-bun rag.js
+bun prepare.js
 ```
 
 ---
 
-# ▶️ Run Application
+## 🖥️ Run Backend
 
 ```bash
-bun chat.js
+bun server.js
+```
+
+Backend runs on:
+
+```text
+http://localhost:3000
 ```
 
 ---
 
-# 🎯 Key Concepts Demonstrated
+## 🌐 Run Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 🎯 Key Concepts Demonstrated
 
 * Retrieval-Augmented Generation (RAG)
 * Vector Embeddings
 * Semantic Search
 * Similarity Search
 * Vector Databases
-* PDF Processing
+* Document Processing
 * Context-Aware Question Answering
 * LLM Integration
 
 ---
 
-# 📄 License
+## 📄 License
 
-This project is created for learning and portfolio purposes.
+This project is intended for learning, experimentation, and portfolio demonstration purposes.
