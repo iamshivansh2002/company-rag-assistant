@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # 🚀 Company RAG Assistant
 
 A Retrieval-Augmented Generation (RAG) application that answers company policy and HR-related questions using semantic search, vector embeddings, and Large Language Models.
@@ -191,6 +189,3 @@ bun chat.js
 # 📄 License
 
 This project is created for learning and portfolio purposes.
-=======
-
->>>>>>> e1a57eb (Added README images)
