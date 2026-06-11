@@ -1,0 +1,8 @@
+/* Hide scrollbar in message list (Tailwind's scrollbar-none only works with @tailwindcss/scrollbar plugin) */
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
